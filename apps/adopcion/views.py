@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from apps.adopcion.models import Persona, Solicitud
 from apps.adopcion.forms import PersonaForm, SolicitudForm
@@ -90,5 +90,10 @@ class SolicitudDelete(DeleteView):
 	model = Solicitud
 	template_name = 'adopcion/solicitud_delete.html'
 	success_url = reverse_lazy('adopcion:solicitud_listar')
+
+
+class SolicitudShow(DetailView):
+	model =  Solicitud
+	template_name = 'adopcion/solicitud_show.html'
 
 	

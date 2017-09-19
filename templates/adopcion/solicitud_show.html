@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<p>Numero de solicitud:<strong>{{ solicitud.id }}</p></strong>
+<p>Sdoptante:<strong>{{ solicitud.persona.nombre }} {{solicitud.persona.apellidos}}</p></strong>
+<p>Numero de Mascotas:<strong>{{ solicitud.numero_mascotas }}</p></strong>
+<p>Razones:<strong>{{ solicitud.razones }}</p></strong>
+
+<a class="btn btn-primary" href="{% url 'adopcion:solicitud_editar' solicitud.id %}">Editar</a>
+<a class="btn btn-danger" href="{% url 'adopcion:solicitud_eliminar' solicitud.id %}">Eliminar</a>
+			
+
+{% endblock %}
